@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Insurance</title>
+    <link rel="stylesheet" href="insurance.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="loginContainer">
+        <h2>Login to Access Car Insurance Services</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div id="loginMessage"></div>
+    </div>
+
+    <div id="insurancePage" style="display: none;">
+        <header>
+            <h1>Car Insurance Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#quote">Get a Quote</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="overview">
+                <h2>Overview of Car Insurance</h2>
+                <p>Car insurance provides financial protection against physical damage or bodily injury resulting from traffic collisions. It also offers financial protection against theft of the vehicle and damage to the vehicle sustained from events other than traffic collisions.</p>
+            </section>
+            <section id="benefits">
+                <h2>Benefits of Car Insurance</h2>
+                <ul>
+                    <li>Financial coverage for accidents</li>
+                    <li>Protection against theft</li>
+                    <li>Liability coverage for injuries</li>
+                    <li>Peace of mind while driving</li>
+                </ul>
+            </section>
+            <section id="quote">
+                <h2>Get a Quote</h2>
+                <form id="quoteForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label for="vehicle">Vehicle Model:</label>
+                    <input type="text" id="vehicle" required>
+                    
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" required>
+                    
+                    <button type="submit">Request Quote</button>
+                </form>
+                <div id="quoteResponse"></div>
+            </section>
+        </main>
+        <footer>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Email: info@carinsurancesolutions.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </section>
+            <p>&copy; 2024 Car Insurance Solutions</p>
+        </footer>
+    </div>
+
+    <script src="insurance.js"></script>
+</body>
+</html>
