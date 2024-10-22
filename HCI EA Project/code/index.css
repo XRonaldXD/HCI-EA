@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav #login {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#hero {
+    background-image: url('/img/Maincar.jpeg');
+    background-size: cover;
+    background-position: top; /* Adjusts the image position to the top */
+    color: white;
+    text-align: center;
+    padding: 200px 20px; /* You can adjust this padding as needed */
+
+}
+
+#hero button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF570C; /* Bright orange color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#featured-vehicles, #promotions, #testimonials, #resources {
+    padding: 20px;
+    text-align: center;
+}
+
+.vehicle-card {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.vehicle-card img {
+    width: 100%;
+}
+
+.promotion-banner {
+    background-color: #FFD700; /* Gold color */
+    padding: 15px;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}

@@ -1,29 +1,62 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index_css.css">
-    <title>Legend Motor Limited</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <title>Car Selling Company</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Legend Motor Limited </h1>
-            <p>Your Premier Vehicle Sales Destination in Hong Kong</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <span id="login">Login</span>
+        </nav>
     </header>
-    <section class="hero-image">
-        <div class="hero-overlay"></div>
-        <div class="hero-text">
-            <h2>Explore Our Luxury Vehicles</h2>
-            <button type="button" id="nextPageButton">Explore Now!</button>
-        </div>
-    </section>
-    <script>
-        $(document).ready(function(){
-            $("#nextPageButton").click(function(){
-                window.location.href = "page2.html";
-            });
-        });
-    </script>
+    <main>
+        <section id="hero">
+            <h1>Find Your Dream Car</h1>
+            <button id="shop-now">Shop Now</button>
+        </section>
+        <section id="featured-vehicles">
+            <h2>Hot Sales Vehicles</h2>
+            <div class="vehicle-card">
+                <img src="/img/car1.png" alt="Car 1">
+                <h3>BMW Ix3</h3>
+                <p>Price: $30,000</p>
+            </div>
+            <div class="vehicle-card">
+                <img src="/img/car2.png" alt="Car 2">
+                <h3>BMW Y3</h3>
+                <p>Price: $40,000</p>
+            </div>
+            <div class="vehicle-card">
+                <img src="/img/car3.png" alt="Car 3">
+                <h3>BWM I3</h3>
+                <p>Price: $50,000</p>
+            </div>
+        </section>
+        <section id="promotions">
+            <h2>Current Promotions</h2>
+            <div class="promotion-banner">
+                <h3>Get 0% APR Financing for 60 Months!</h3>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>Contact us: (123) 456-7890 | info@carsellingcompany.com</p>
+        <p>Follow us on social media: [Social Media Links]</p>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
