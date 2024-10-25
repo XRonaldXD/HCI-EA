@@ -24,15 +24,18 @@ $(document).ready(function () {
     var vehicle = $("#vehicle").val();
     var year = $("#year").val();
 
-    // Simulate a quote request
-    $("#quoteResponse").html(
-      `Thank you, ${name}! Your quote request for a ${year} ${vehicle} has been submitted. We will contact you at ${email}.`
-    );
-
-    // Clear the form
-    $("#quoteForm")[0].reset();
+    // After submit hide the form and display detail form for user to input more LOL
+    $(this).hide();
+    $("#qutoeHeader").html("Get a Quote > Details");
+    $("#quoteDetailForm").show();
   });
 
+  $("#qutoeHeader").click(function(){
+    $("#qutoeHeader").html("Get a Quote");
+    $("#quoteDetailForm").hide();
+    $("#quoteForm").show()
+  })
+  
   $(".policy-button").click(function () {
     console.log("policy-button clicked!");
     $(this).addClass("active").siblings().removeClass("active");
@@ -48,13 +51,29 @@ $(document).ready(function () {
       $('.experience-select option[value=""]').hide();
     }
   });
-  $(".dropdown-input").click(function () {
-    $(this).siblings(".dropdown-menu").toggle();
+   // Toggle the dropdown menu visibility
+   $('.dropdown-input').click(function() {
+    $(this).siblings('.dropdown-menu').toggle();
   });
 
-  $(".search-input").on("input", function () {
+  // Handle the option selection
+  $('.option').click(function() {
+    var selectedOption = $(this).text();
+    $('.dropdown-input').val(selectedOption);
+    $('.dropdown-menu').hide();
+  });
+
+  // Hide the dropdown menu when clicking outside the dropdown
+  $(document).click(function(event) {
+    if (!$(event.target).closest('.dropdown').length) {
+      $('.dropdown-menu').hide();
+    }
+  });
+
+  // Show/hide the dropdown options based on the search input
+  $('.search-input').on('input', function() {
     var searchTerm = $(this).val().toLowerCase();
-    $(".option").each(function () {
+    $('.option').each(function() {
       var optionText = $(this).text().toLowerCase();
       if (optionText.includes(searchTerm)) {
         $(this).show();
@@ -62,11 +81,5 @@ $(document).ready(function () {
         $(this).hide();
       }
     });
-  });
-
-  $(document).click(function (event) {
-    if (!$(event.target).closest(".dropdown").length) {
-      $(".dropdown-menu").hide();
-    }
   });
 });
