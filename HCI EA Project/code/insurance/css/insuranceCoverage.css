@@ -1,0 +1,46 @@
+/* insuranceCoverage.css */
+#insurance-coverage {
+    padding: 20px;
+}
+
+.coverage-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.coverage-option {
+    background-color: #f5f8ff;
+    border: 1px solid #cdd9ed;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.coverage-option h3 {
+    margin-top: 0;
+}
+
+.coverage-option p {
+    flex-grow: 1;
+}
+
+.add-to-application-btn {
+    min-width: 150px;
+    height: 50px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #ffffff;
+    border: 1px solid #cdd9ed;
+    border-radius: 8px;
+    color: #334155;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-application-btn:hover {
+    background-color: #f5f8ff;
+}

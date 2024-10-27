@@ -1,178 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Car Insurance</title>
-    <link rel="stylesheet" href="insurance.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  </head>
-  <body>
-    <div id="loginContainer">
-      <h2>Login to Access Car Insurance Services</h2>
-      <form id="loginForm">
-        <label for="gmail">Gmail:</label>
-        <input type="email" id="email" required />
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" required />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Insurance</title>
+  <link rel="stylesheet" href="insurance.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
 
-        <button type="submit" id="submit">Login</button>
-      </form>
-      <div id="loginMessage"></div>
-    </div>
+<body>
 
-    <div id="insurancePage" style="display: none">
-      <header>
-        <h1>Car Insurance Solutions</h1>
-        <nav>
-          <ul>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#quote">Get a Quote</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <section id="overview">
-          <h2>Overview of Car Insurance</h2>
-          <p>
-            Car insurance provides financial protection against physical damage
-            or bodily injury resulting from traffic collisions. It also offers
-            financial protection against theft of the vehicle and damage to the
-            vehicle sustained from events other than traffic collisions.
-          </p>
-        </section>
-        <section id="benefits">
-          <h2>Benefits of Car Insurance</h2>
-          <ul>
-            <li>Financial coverage for accidents</li>
-            <li>Protection against theft</li>
-            <li>Liability coverage for injuries</li>
-            <li>Peace of mind while driving</li>
-          </ul>
-        </section>
-        <section id="quote">
-          <h2 id="qutoeHeader">Get a Quote</h2>
+  <div id="insurancePage">
+    <header>
+      <h1>Car Insurance Solutions</h1>
+      <nav>
+        <ul>
+          <li><a href="..\index.html">Home</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="overview">
+        <h2>Overview of Car Insurance</h2>
+        <p>
+          Car insurance provides financial protection against physical damage
+          or bodily injury resulting from traffic collisions. It also offers
+          financial protection against theft of the vehicle and damage to the
+          vehicle sustained from events other than traffic collisions.
+        </p>
+      </section>
+      <section id="benefits">
+        <h2>Benefits of Car Insurance</h2>
+        <ul>
+          <li>Financial coverage for accidents</li>
+          <li>Protection against theft</li>
+          <li>Liability coverage for injuries</li>
+          <li>Peace of mind while driving</li>
+        </ul>
+      </section>
+      <section id="quote">
+        <h2 id="qutoeHeader">Get a Quote</h2>
 
-          <form id="quoteForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required />
+        <form id="quoteForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
 
-            <label for="vehicle">Vehicle Model:</label>
-            <input type="text" id="vehicle" required />
+          <label for="vehicle">Vehicle Model:</label>
+          <input type="text" id="vehicle" required />
 
-            <label for="year">Year:</label>
-            <input type="number" id="year" required />
+          <label for="year">Year:</label>
+          <input type="number" id="year" required />
 
-            <button type="submit" id="submit">Continue Quote</button>
-          </form>
+          <button type="submit" id="submit">Continue Quote</button>
+        </form>
 
-          <form id="quoteDetailForm" style="display: none;">
-            <label for="party">Car Insurance Policies:</label>
-            <div id="PoliciesBox">
-              <button class="policy-button">Third Party Cover</button>
-              <button class="policy-button">Comprehensive</button>
-            </div>
+        <form id="quoteDetailForm" style="display: none;">
+          <label for="party">Car Insurance Policies:</label>
+          <div id="PoliciesBox">
+            <button class="policy-button">Third Party Cover</button>
+            <button class="policy-button">Comprehensive</button>
+          </div>
 
-            <label for="Price">Your Car Price:</label>
-            <div id="inputBox">
-              <div>HK$</div>
-              <input type="number" id="Price" />
-            </div>
+          <label for="Price">Your Car Price:</label>
+          <div id="inputBox">
+            <div>HK$</div>
+            <input type="number" id="Price" />
+          </div>
 
-            <label for="driverAge">Driver Age:</label>
-              <input type="number" id="driverAge" />
+          <label for="driverAge">Driver Age:</label>
+          <input type="number" id="driverAge" />
 
-            <label for="drivingExperience"
-              >Private Vehicle Driving Experience:</label
-            >
-            <select class="experience-select">
-              <option value="" disabled selected>
-                Private Vehicle Driving Experience
-              </option>
-              <option value="more-than-5-years">
-                Full Driving Licence more than 5 years
-              </option>
-              <option value="more-than-4-years">
-                Full Driving Licence more than 4 years
-              </option>
-              <option value="more-than-3-years">
-                Full Driving Licence more than 3 years
-              </option>
-              <option value="more-than-2-years">
-                Full Driving Licence more than 2 years
-              </option>
-              <option value="more-than-1-year">
-                Full Driving Licence more than 1 year
-              </option>
-              <option value="less-than-1-year">
-                Full Driving Licence less than 1 year
-              </option>
-              <option value="probationary">Probationary Driving Licence</option>
-            </select>
+          <label for="drivingExperience">Private Vehicle Driving Experience:</label>
+          <select class="experience-select">
+            <option value="" disabled selected>
+              Private Vehicle Driving Experience
+            </option>
+            <option value="more-than-5-years">
+              Full Driving Licence more than 5 years
+            </option>
+            <option value="more-than-4-years">
+              Full Driving Licence more than 4 years
+            </option>
+            <option value="more-than-3-years">
+              Full Driving Licence more than 3 years
+            </option>
+            <option value="more-than-2-years">
+              Full Driving Licence more than 2 years
+            </option>
+            <option value="more-than-1-year">
+              Full Driving Licence more than 1 year
+            </option>
+            <option value="less-than-1-year">
+              Full Driving Licence less than 1 year
+            </option>
+            <option value="probationary">Probationary Driving Licence</option>
+          </select>
 
-            <label for="offencePoint"
-              >Number of driving offence point in last 3 years:</label
-            >
-            <select class="offencePoint">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </select>
+          <label for="offencePoint">Number of driving offence point in last 3 years:</label>
+          <select class="offencePoint">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+          </select>
 
-            <label for="Occupation">Driver Occupation</label>
-            <div class="driver-occupation">
-                <div class="dropdown">
-                  <input type="text" class="dropdown-input" placeholder="Driver Occupation" />
-                  <div class="dropdown-menu">
-                    <div class="dropdown-search">
-                      <input type="text" class="search-input" placeholder="Search..." />
-                    </div>
-                    <div class="dropdown-options">
-                      <div class="option">Accounting</div>
-                      <div class="option">Advertising</div>
-                      <div class="option">Agriculture / Fishing</div>
-                      <div class="option">Aviation / Cabin Crew</div>
-                      <div class="option">Banking and Finance</div>
-                    </div>
-                  </div>
+          <label for="Occupation">Driver Occupation</label>
+          <div class="driver-occupation">
+            <div class="dropdown">
+              <input type="text" class="dropdown-input" placeholder="Driver Occupation" />
+              <div class="dropdown-menu">
+                <div class="dropdown-search">
+                  <input type="text" class="search-input" placeholder="Search..." />
+                </div>
+                <div class="dropdown-options">
+                  <div class="option">Accounting</div>
+                  <div class="option">Advertising</div>
+                  <div class="option">Agriculture / Fishing</div>
+                  <div class="option">Aviation / Cabin Crew</div>
+                  <div class="option">Banking and Finance</div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <button type="submit" id="submit">Get a Quote</button>
-          </form>
+          <button type="submit" id="submit">Get a Quote</button>
+        </form>
 
-          <div id="quoteResponse"></div>
-        </section>
-      </main>
-      <footer>
-        <section id="contact">
-          <h2>Contact Us</h2>
-          <p>Email: info@carinsurancesolutions.com</p>
-          <p>Phone: (123) 456-7890</p>
-        </section>
-        <p>&copy; 2024 Car Insurance Solutions</p>
-      </footer>
-    </div>
+        <div id="quoteResponse"></div>
+      </section>
+    </main>
+    <footer>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: cw-cs@vtc.edu.hk</p>
+        <p>Phone: (852) 2595 8333</p>
+      </section>
+      <p>&copy; 2024 Car Insurance Solutions</p>
+    </footer>
+  </div>
 
-    <script src="insurance.js"></script>
-  </body>
+  <script src="insurance.js"></script>
+</body>
+
 </html>

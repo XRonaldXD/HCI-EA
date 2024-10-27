@@ -1,19 +1,4 @@
 $(document).ready(function () {
-  $("#loginForm").on("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting the default way
-
-    // Simulated login credentials
-    const email = $("#email").val();
-    const password = $("#password").val();
-
-    // Check for correct credentials (for demonstration, use "user" and "pass")
-    if (email === "user@vtc.com" && password === "pass") {
-      $("#loginContainer").hide(); // Hide login form
-      $("#insurancePage").show(); // Show insurance content
-    } else {
-      $("#loginMessage").html("Invalid email or password. Please try again.");
-    }
-  });
 
   $("#quoteForm").on("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting the default way
@@ -30,13 +15,14 @@ $(document).ready(function () {
     $("#quoteDetailForm").show();
   });
 
-  $("#qutoeHeader").click(function(){
+  $("#qutoeHeader").click(function () {
     $("#qutoeHeader").html("Get a Quote");
     $("#quoteDetailForm").hide();
     $("#quoteForm").show()
   })
-  
-  $(".policy-button").click(function () {
+
+  $(".policy-button").click(function (event) {
+    event.preventDefault(); // Prevent the default button click behavior
     console.log("policy-button clicked!");
     $(this).addClass("active").siblings().removeClass("active");
   });
@@ -51,29 +37,29 @@ $(document).ready(function () {
       $('.experience-select option[value=""]').hide();
     }
   });
-   // Toggle the dropdown menu visibility
-   $('.dropdown-input').click(function() {
+  // Toggle the dropdown menu visibility
+  $('.dropdown-input').click(function () {
     $(this).siblings('.dropdown-menu').toggle();
   });
 
   // Handle the option selection
-  $('.option').click(function() {
+  $('.option').click(function () {
     var selectedOption = $(this).text();
     $('.dropdown-input').val(selectedOption);
     $('.dropdown-menu').hide();
   });
 
   // Hide the dropdown menu when clicking outside the dropdown
-  $(document).click(function(event) {
+  $(document).click(function (event) {
     if (!$(event.target).closest('.dropdown').length) {
       $('.dropdown-menu').hide();
     }
   });
 
   // Show/hide the dropdown options based on the search input
-  $('.search-input').on('input', function() {
+  $('.search-input').on('input', function () {
     var searchTerm = $(this).val().toLowerCase();
-    $('.option').each(function() {
+    $('.option').each(function () {
       var optionText = $(this).text().toLowerCase();
       if (optionText.includes(searchTerm)) {
         $(this).show();
