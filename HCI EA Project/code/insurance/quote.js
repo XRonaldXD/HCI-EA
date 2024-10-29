@@ -29,6 +29,13 @@ $(document).ready(function () {
     $("#quoteForm").show();
   })
 
+  $("#Back").click(function(){
+    $("#qutoeHeader").html("Get a Quote");
+    $("#quoteDetailForm").hide();
+    $("#quoteResponse").hide();
+    $("#quoteForm").show();
+  })
+
   $("#quoteDetailForm").on("submit", function (event) {
     event.preventDefault();
     if (!policyButtonsPressed) {
@@ -37,7 +44,7 @@ $(document).ready(function () {
     } else {
       // Allow the form to submit
       policyButtonsPressed = false;
-      
+
       // Collect values from the second form
       const carPrice = $('#Price').val();
       const driverAge = $('#driverAge').val();

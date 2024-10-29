@@ -66,6 +66,20 @@ input {
   color: #ffffff;
 }
 
+#Back {
+  margin-top: 10px;
+  background-color: #f44336;
+    /* Red */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#Back:hover{
+  background-color: #c62828;
+  /* Slightly darker red on hover */
+
+}
+
 #inputBox {
   display: flex;
   align-items: center;
