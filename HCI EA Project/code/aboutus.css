@@ -1,0 +1,14 @@
+.explore-button {
+    display: inline-block;
+    background-color: #FF570C;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #d94e09;
+}

@@ -1,10 +1,8 @@
-/* main.css */
 * {
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -38,43 +36,43 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav #login {
-    cursor: pointer;
-    padding: 5px;
+main {
+    padding: 2rem;
 }
 
-#hero {
-    background-image: url('/img/Maincar.jpeg');
-    background-size: cover;
-    background-position: top;
-    color: white;
-    text-align: center;
-    padding: 200px 20px;
+section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
-#hero button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #FF570C;
-    color: white;
-    border: none;
-    cursor: pointer;
+h1, h2 {
+    color: #1d1d1d;
 }
 
-#featured-vehicles,
-#promotions,
-#testimonials,
-#resources {
-    padding: 20px;
-    text-align: center;
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+li {
+    color: #666;
+    margin-bottom: 0.5rem;
 }
 
 footer {
-    background-color: #333;
+    background-color: #1d1d1d;
     color: white;
     text-align: center;
-    padding: 20px;
-    position: relative;
+    padding: 1rem;
+    font-size: 0.9rem;
 }
 
 button:hover {
