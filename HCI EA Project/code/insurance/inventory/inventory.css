@@ -80,6 +80,11 @@ select {
     width: 80%;
 }
 
+.Edit-btn{
+    background-color: #007bff; /* Blue color for edit button */
+    color: #fff; /* White text color */
+}
+
 .submit-btn {
     background-color: #4CAF50;
     /* Green */

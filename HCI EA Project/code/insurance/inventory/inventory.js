@@ -55,7 +55,7 @@ $(document).ready(function () {
     });
 
     // Cancel the entire row
-    $('.Cancel-btn').click(function () {
+    $('.cancel-btn').click(function () {
         var $row = $(this).closest('tr');
         $row.remove();
     });
