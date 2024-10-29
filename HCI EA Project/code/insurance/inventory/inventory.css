@@ -59,6 +59,7 @@ select {
     padding-right: 40px;
     width: 100%;
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -80,9 +81,11 @@ select {
     width: 80%;
 }
 
-.Edit-btn{
-    background-color: #007bff; /* Blue color for edit button */
-    color: #fff; /* White text color */
+.Edit-btn {
+    background-color: #007bff;
+    /* Blue color for edit button */
+    color: #fff;
+    /* White text color */
 }
 
 .submit-btn {
@@ -121,4 +124,19 @@ select {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.agreement-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.agreement-checkbox label a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.agreement-checkbox label a:hover {
+    text-decoration: underline;
 }
