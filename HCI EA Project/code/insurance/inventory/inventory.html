@@ -7,6 +7,8 @@
     <title>Application Management System</title>
     <link rel="stylesheet" href="inventory.css">
     <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../quote.js">
+    <link rel="stylesheet" href="../quote.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -40,7 +42,7 @@
                         <td>1</td>
                         <td>Toyota Camry</td>
                         <td>Comprehensive</td>
-                        <td>Pending</td>
+                        <td>Waiting for Submit</td>
                         <td>
                             <button class="Edit-btn" data-id="1">Edit</button>
                             <button class="Cancel-btn" data-id="1">Cancel</button>
@@ -50,7 +52,7 @@
                         <td>2</td>
                         <td>Honda Accord</td>
                         <td>Third Party Cover</td>
-                        <td>Approved</td>
+                        <td>Waiting for Submit</td>
                         <td>
                             <button class="Edit-btn" data-id="2">Edit</button>
                             <button class="Cancel-btn" data-id="2">Cancel</button>
@@ -70,7 +72,7 @@
                         <td>4</td>
                         <td>Chevrolet Malibu</td>
                         <td>Comprehensive</td>
-                        <td>Pending</td>
+                        <td>Waiting for Submit</td>
                         <td>
                             <button class="Edit-btn" data-id="4">Edit</button>
                             <button class="Cancel-btn" data-id="4">Cancel</button>
@@ -80,7 +82,7 @@
                         <td>5</td>
                         <td>Nissan Altima</td>
                         <td>Third Party Cover</td>
-                        <td>Approved</td>
+                        <td>Waiting for Submit</td>
                         <td>
                             <button class="Edit-btn" data-id="5">Edit</button>
                             <button class="Cancel-btn" data-id="5">Cancel</button>
@@ -97,18 +99,106 @@
 
                 <!--   Form Edit     -->
                 <form id="editForm">
+                    <label for="quoteID">Quote ID:</label>
+                    <input type="text" id="quoteID" required disabled>
+
                     <label for="vehicleModel">Vehicle Model:</label>
                     <input type="text" id="vehicleModel" required>
-                    <label for="status">Status:</label>
-                    <select id="status">
-                        <option value="Pending">Pending</option>
-                        <option value="Approved">Approved</option>
-                        <option value="Rejected">Rejected</option>
+
+                    <label for="insuranceCoverage">Insurance Coverage:</label>
+                    <select id="insuranceCoverage">
+                        <option value="" selected>Select Coverage</option>
+                        <option value="Liability Coverage">Liability Coverage</option>
+                        <option value="Collision Coverage">Collision Coverage</option>
+                        <option value="Comprehensive Coverage">Comprehensive Coverage</option>
+                        <option value="Uninsured/Underinsured Motorist Coverage">Uninsured/Underinsured Motorist
+                            Coverage</option>
+                        <option value="Personal Injury Protection (PIP) or No-Fault Coverage">Personal Injury Protection
+                            (PIP) or No-Fault Coverage</option>
+                        <option value="Roadside Assistance">Roadside Assistance</option>
+                        <option value="Rental Car Coverage">Rental Car Coverage</option>
+                        <option value="Gap Coverage">Gap Coverage</option>
                     </select>
-                    <button type="Edit">Save Changes</button>
+
+                    <label for="Price">Your Car Price:</label>
+                    <div id="inputBox">
+                        <div>HK$</div>
+                        <input type="number" id="Price" required />
+                    </div>
+
+                    <label for="driverAge">Driver Age:</label>
+                    <input type="number" id="driverAge" required />
+
+                    <label for="drivingExperience">Private Vehicle Driving Experience:</label>
+                    <select class="experience-select" required>
+                        <option value="" disabled selected>
+                            Private Vehicle Driving Experience
+                        </option>
+                        <option value="more-than-5-years">
+                            Full Driving Licence more than 5 years
+                        </option>
+                        <option value="more-than-4-years">
+                            Full Driving Licence more than 4 years
+                        </option>
+                        <option value="more-than-3-years">
+                            Full Driving Licence more than 3 years
+                        </option>
+                        <option value="more-than-2-years">
+                            Full Driving Licence more than 2 years
+                        </option>
+                        <option value="more-than-1-year">
+                            Full Driving Licence more than 1 year
+                        </option>
+                        <option value="less-than-1-year">
+                            Full Driving Licence less than 1 year
+                        </option>
+                        <option value="probationary">Probationary Driving Licence</option>
+                    </select>
+
+                    <label for="offencePoint">Number of driving offence point in last 3 years:</label>
+                    <select class="offencePoint" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select>
+
+                    <label for="Occupation">Driver Occupation</label>
+                    <div class="driver-occupation">
+                        <div class="dropdown">
+                            <input type="text" class="dropdown-input" placeholder="Driver Occupation" required />
+                            <div class="dropdown-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" class="search-input" placeholder="Search..." />
+                                </div>
+                                <div class="dropdown-options">
+                                    <div class="option">Accounting</div>
+                                    <div class="option">Advertising</div>
+                                    <div class="option">Agriculture / Fishing</div>
+                                    <div class="option">Aviation / Cabin Crew</div>
+                                    <div class="option">Banking and Finance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <button type="button" class="cancel-btn">Cancel</button>
+                    </div>
                 </form>
-
-
             </div>
         </div>
     </div>
