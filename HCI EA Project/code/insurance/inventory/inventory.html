@@ -7,7 +7,7 @@
     <title>Application Management System</title>
     <link rel="stylesheet" href="inventory.css">
     <link rel="stylesheet" href="../../main.css">
-    <link rel="stylesheet" href="../quote.js">
+    <script src="../quote.js"></script>
     <link rel="stylesheet" href="../quote.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -23,7 +23,6 @@
                 <li><a href="inventory.html">Application List</a></li>
                 <li><a href="#contact">Track Application</a></li>
             </ul>
-            <span id="login">Login</span>
         </nav>
     </header>
     <div class="container">
@@ -157,7 +156,7 @@
 
                     <label for="offencePoint">Number of driving offence point in last 3 years:</label>
                     <select class="offencePoint" required>
-                        <option value="0">0</option>
+                        <option value="0" selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
