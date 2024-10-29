@@ -50,6 +50,34 @@ th, td {
     width: 80%;
 }
 
+.submit-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.Cancel-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.Cancel-btn:hover {
+    background-color: #c62828; /* Slightly darker red on hover */
+}
 .close {
     color: #aaa;
     float: right;

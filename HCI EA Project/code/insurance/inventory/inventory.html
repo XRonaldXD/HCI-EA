@@ -16,9 +16,9 @@
         <nav>
             <ul>
                 <li><a href="../../index.html">Home</a></li>
-                <li><a href="./inventory.html">Inventory</a></li>
-                <li><a href="../quote.html">Get a Quote</a></li>
-                <li><a href="#services">Apply</a></li>
+                <li><a href="#car">Car</a></li>
+                <li><a href="/insurance/insuranceCoverage.html">Insurance</a></li>
+                <li><a href="inventory.html">Application List</a></li>
                 <li><a href="#contact">Track Application</a></li>
             </ul>
             <span id="login">Login</span>
@@ -30,31 +30,60 @@
         <div class="applications">
             <h2>Your Applications</h2>
             <table id="applicationsTable">
-                <thead>
-                    <tr>
-                        <th>Application ID</th>
-                        <th>Vehicle Model</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
+                <th>Quote ID</th>
+                <th>Vehicle Model</th>
+                <th>Insurance Coverage</th>
+                <th>Status</th>
+                <th>Actions</th>
                 <tbody>
                     <tr>
                         <td>1</td>
                         <td>Toyota Camry</td>
+                        <td>Comprehensive</td>
                         <td>Pending</td>
                         <td>
-                            <button class="edit-btn" data-id="1">Edit</button>
-                            <button class="view-btn" data-id="1">View</button>
+                            <button class="Edit-btn" data-id="1">Edit</button>
+                            <button class="Cancel-btn" data-id="1">Cancel</button>
                         </td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Honda Accord</td>
+                        <td>Third Party Cover</td>
                         <td>Approved</td>
                         <td>
-                            <button class="edit-btn" data-id="2">Edit</button>
-                            <button class="view-btn" data-id="2">View</button>
+                            <button class="Edit-btn" data-id="2">Edit</button>
+                            <button class="Cancel-btn" data-id="2">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Ford Focus</td>
+                        <td>Liability Only</td>
+                        <td>Rejected</td>
+                        <td>
+                            <button class="Edit-btn" data-id="3">Edit</button>
+                            <button class="Cancel-btn" data-id="3">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Chevrolet Malibu</td>
+                        <td>Comprehensive</td>
+                        <td>Pending</td>
+                        <td>
+                            <button class="Edit-btn" data-id="4">Edit</button>
+                            <button class="Cancel-btn" data-id="4">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Nissan Altima</td>
+                        <td>Third Party Cover</td>
+                        <td>Approved</td>
+                        <td>
+                            <button class="Edit-btn" data-id="5">Edit</button>
+                            <button class="Cancel-btn" data-id="5">Cancel</button>
                         </td>
                     </tr>
                 </tbody>
@@ -65,6 +94,8 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>Edit Application</h2>
+
+                <!--   Form Edit     -->
                 <form id="editForm">
                     <label for="vehicleModel">Vehicle Model:</label>
                     <input type="text" id="vehicleModel" required>
@@ -74,8 +105,10 @@
                         <option value="Approved">Approved</option>
                         <option value="Rejected">Rejected</option>
                     </select>
-                    <button type="submit">Save Changes</button>
+                    <button type="Edit">Save Changes</button>
                 </form>
+
+
             </div>
         </div>
     </div>

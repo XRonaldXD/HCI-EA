@@ -1,14 +1,20 @@
 $(document).ready(function () {
+
   var policyButtonsPressed = false;
 
   $("#quoteForm").on("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting the default way
 
-    // Get form data
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var vehicle = $("#vehicle").val();
-    var year = $("#year").val();
+    // Collect values from the first form
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const vehicle = $('#vehicle').val();
+    const year = $('#year').val();
+
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Vehicle Model:', vehicle);
+    console.log('Year:', year);
 
     // After submit hide the form and display detail form for user to input more LOL
     $(this).hide();
@@ -31,12 +37,19 @@ $(document).ready(function () {
     } else {
       // Allow the form to submit
       policyButtonsPressed = false;
-      var policies = $("#policies").val();
-      var price = $("#price").val();
-      var age = $("#age").val();
-      var experience = $("#experience").val();
-      var points = $("#points").val();
-      var occupation = $("#occupation").val();
+      
+      // Collect values from the second form
+      const carPrice = $('#Price').val();
+      const driverAge = $('#driverAge').val();
+      const drivingExperience = $('.experience-select').val();
+      const offencePoints = $('.offencePoint').val();
+      const occupation = $('.dropdown-input').val();
+
+      console.log('Car Price:', carPrice);
+      console.log('Driver Age:', driverAge);
+      console.log('Driving Experience:', drivingExperience);
+      console.log('Offence Points:', offencePoints);
+      console.log('Occupation:', occupation);
 
       $("#quoteDetailForm").hide();
       $("#quoteResponse").show();
@@ -45,7 +58,9 @@ $(document).ready(function () {
   });
 
   // Reset fields when user wants a new quote
-  $("#newQuoteButton").click(function () {
+  $("#newQuoteButton").click(function (event) {
+    event.preventDefault(); // Prevent form submission or default action
+
     $("#quoteResponse").hide();          // Hide the response message
     $("#quoteForm").show();              // Show the initial quote form
     $("#quoteDetailForm").hide();        // Ensure the detail form is hidden
@@ -60,7 +75,8 @@ $(document).ready(function () {
     $(".formButton").removeClass("active"); // Reset policy button state
 
     policyButtonsPressed = false;        // Reset policy button tracking
-  });
+    $('#coverage-type').text(coverage);
+});
 
   $(".formButton").click(function (event) {
     event.preventDefault(); // Prevent the default button click behavior

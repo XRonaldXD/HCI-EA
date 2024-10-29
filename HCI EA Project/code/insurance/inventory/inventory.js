@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Open modal for editing
-    $('.edit-btn').click(function() {
+    $('.Edit-btn').click(function() {
         var applicationId = $(this).data('id');
         // Fetch existing data (for demo purposes, using static values)
         var vehicleModel = applicationId === 1 ? 'Toyota Camry' : 'Honda Accord';
@@ -10,7 +10,9 @@ $(document).ready(function() {
         $('#vehicleModel').val(vehicleModel);
         $('#status').val(status);
         $('#applicationModal').show();
+        $('#vehicleModel').focus();
     });
+    
 
     // Close modal
     $('.close').click(function() {
@@ -35,5 +37,11 @@ $(document).ready(function() {
         if ($(event.target).is('#applicationModal')) {
             $('#applicationModal').hide();
         }
+    });
+
+    // Cancel the entire row
+    $('.Cancel-btn').click(function() {
+        var $row = $(this).closest('tr');
+        $row.remove();
     });
 });
