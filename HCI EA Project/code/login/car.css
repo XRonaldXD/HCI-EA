@@ -1,0 +1,240 @@
+header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    background: #333; 
+}
+
+.navbar {
+    display: flex; 
+    padding: 0 10px; 
+    max-width: 1200px; 
+    width: 100%; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+  
+.navbar .all-links {
+    display: flex; 
+    align-items: center; 
+}
+  
+.navbar .all-links li {
+    position: relative; 
+    list-style: none; 
+}
+  
+
+.navbar .logo a {
+    display: flex; 
+    align-items: center; 
+    margin-left: 0; 
+}
+
+header a, footer a {
+    margin-left: 40px; 
+    text-decoration: none; 
+    color: #fff; 
+    height: 100%; 
+    padding: 20px 0; 
+    display: inline-block; 
+}
+
+header a:hover, footer a:hover {
+    color: #ddd; 
+}
+
+.carlist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; 
+    margin-top: 150px; 
+}
+
+.carlist .car {
+    text-align: center;
+    padding: 3rem 1rem; 
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1); 
+}
+.carimg{
+    height: 200px;
+    width: 250px;
+    
+}
+
+.carlist .buybutton{
+    border: none;
+    background-color: greenyellow;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    color: #fff;
+
+}
+
+.carlist .buybutton:hover{
+    background-color: chartreuse;
+    cursor: pointer;
+}
+
+.shoppingcart {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    max-height: 100vh;
+    overflow-y: auto;
+    
+}
+
+.cartitem {
+    margin-bottom: 10px;
+}
+
+.totalprice {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+.shoppingcart {
+    position: fixed;
+    top: 100px;
+    right: 0; 
+    background: #fff; 
+    padding: 20px; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); 
+    width: 300px; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    border-left: 2px solid #ccc; 
+    border-radius: 10px;
+}
+
+.shoppingcart h2 {
+    font-size: 1.5em; 
+    margin-bottom: 15px; 
+    color: #333; 
+}
+
+.cart-item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    padding: 5px 0; 
+    border-bottom: 1px solid #eee; 
+}
+
+.delete-button {
+    background-color: red; 
+    color: #fff;
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.delete-button:hover {
+    background-color: darkred; 
+}
+
+.totalprice {
+    font-weight: bold; 
+    margin-top: 20px; 
+    font-size: 1.2em; 
+    color: #333; 
+    text-align: right; 
+}
+
+.checkout {
+    background-color: green; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px; 
+    width: 100%; 
+    cursor: pointer; 
+    margin-top: 10px; 
+    transition: background-color 0.3s; 
+}
+
+.checkout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+}
+
+.checkout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+}
+
+.checkout-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+.checkout-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.checkout-form input,
+.checkout-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkout-form button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.checkout-form button:hover {
+    background-color: darkgreen;
+}
+
+.close-checkout {
+    background-color: red;
+    margin-top: 10px;
+}
+
+.close-checkout:hover {
+    background-color: darkred;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orderpage.css">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="">Legend Motor Limited</a></h2>
+            <ul class="all-links">
+                <li><a href="" id="carpage">Product</a></li>
+                <li><a href="OrderPage.html">My Order</a></li>
+                <li><a href="#" id="cart-btn">User</a></li>
+                <li><a href="#" id="logout">logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="order-container">
+        <h2>Your Orders</h2>
+        <div id="order-list"></div>
+    </div>
+</body>
+
+<script>
+
+        $("#logout").click(function(event) {
+            event.preventDefault();
+            window.location.href = "LoginPage.html"; 
+        });
+
+        $("#carpage").click(function(){
+            event.preventDefault();
+            window.location.href = "car.html";
+        });
+
+        $(document).ready(function() {
+            const orders = [
+        {
+            orderNumber: 12345,
+            date: '2024-10-01',
+            items: 'Lamborghini Revuelto, Porsche Macan EV',
+            total: 200000000,
+            status: 'completed'
+        },
+        {
+            orderNumber: 12346,
+            date: '2024-10-05',
+            items: 'Honda Accord EX',
+            total: 100000000,
+            status: 'pending'
+        },
+        {
+            orderNumber: 12347,
+            date: '2024-10-10',
+            items: 'All-New CR-V',
+            total: 100000000,
+            status: 'cancelled'
+        }
+    ];
+
+    function renderOrders() {
+        orders.forEach(order => {
+            const statusClass = `status-${order.status}`;
+            $('#order-list').append(`
+        <div class="order-item">
+            <div class="order-header">
+            <h3>Order #${order.orderNumber}</h3>
+            <span class="order-status ${statusClass}">${capitalizeFirstLetter(order.status)}</span>
+        </div>
+        <div class="order-details">
+            <p>Date: ${order.date}</p>
+                <p>Items: ${order.items}</p>
+            </div>
+            <div class="order-total">Total: $${order.total.toLocaleString()}</div>
+        </div>
+            `);
+        });
+    }
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+renderOrders();
+});
+</script>
+
+</html>

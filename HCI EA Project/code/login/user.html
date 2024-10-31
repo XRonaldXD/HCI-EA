@@ -2,35 +2,44 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="user.css">
+<title>Login</title>
+<link rel="stylesheet" href="user.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-    <section>
-        <div class="selectuser-Box">
-            <form id="selectuserForm">
-                
-                <h2>Who are you mother fucker</h2>
+<section>
+    <div class="selectuser-Box">
+        <form id="selectuserForm">
+            
+            <h2>Who are you mother fucker</h2>
 
-                
-                <div class="register-link">
-                    <a href="LoginPage.html"><span>Customer</span></a>
-                </div>
+            
+            <div class="register-link">
+                <h3>Customer</h3>
+            </div>
 
-                <div class="register-link">
-                    <a href="LoginPage.html"><h3>sales manager</h3></a>
-                </div>
+            <div class="register-link">
+                <h3>sales manager</h3>
+            </div>
 
-                <div class="register-link">
-                    <a href="LoginPage.html"><h3>Insurance sales</h3></a>
-                </div>
+            <div class="register-link">
+                <h3>Insurance sales</h3>
+            </div>
 
-                <br>
+            <br>
 
-            </form>
-        </div>
-    </section>
+            <script>
+                $(document).ready(function(){
+                    $(".register-link").click(function(){
+                        window.location.href = "LoginPage.html";
+                    });
+                });
+            </script>
+
+        </form>
+    </div>
+</section>
 </body>
 
 </html>

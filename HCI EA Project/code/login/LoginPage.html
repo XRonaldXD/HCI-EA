@@ -4,23 +4,26 @@
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="Login.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
     <section>
         <div class="Login-Box">
+            
+            <img src="pngwing.png" id="backimg" width="30" height="30">
+            
             <form id="loginForm">
+
 
                 <h2>Login</h2>
 
                 <div class="Input-Box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                     <input type="text" id="email" required>
                     <label>Email</label>
                 </div>
 
                 <div class="Input-Box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                     <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
@@ -29,7 +32,7 @@
                     <label>
                         <input type="checkbox"> Remember me
                     </label>
-                    <a href="#">Forget Password?</a>
+                    <a href="forgetpassword.html">Forget Password?</a>
                 </div>
 
                 <div class="register-link">
@@ -37,14 +40,37 @@
                 </div>
 
                 <div class="register-link">
-                    <p>Don't have an account? <a href="">Register</a></p>
+                    <p>Don't have an account? <a href="register.html" id="Register">Register</a></p>
                 </div>
 
                 <br>
-
             </form>
+
         </div>
+        
     </section>
+
 </body>
+    <script>
+        $("#backimg").click(function(){
+            window.location.href = "user.html";
+        });
+        
+
+        $("#loginForm").submit(function(event) {
+            event.preventDefault(); 
+
+            var email = $("#email").val().trim();
+            var password = $("#password").val().trim();
+
+        if (email === "" || password === "") {
+            alert("Email and Password cannot be empty.");
+            return; 
+        }else{
+            window.location.href = "car.html";
+        }
+
+        });
+    </script>
 
 </html>

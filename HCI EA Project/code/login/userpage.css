@@ -1,0 +1,137 @@
+header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    background: #333; 
+}
+
+.navbar {
+    display: flex; 
+    padding: 0 10px; 
+    max-width: 1200px; 
+    width: 100%; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+          
+.navbar .all-links {
+display: flex; 
+    align-items: center; 
+}
+    
+.navbar .all-links li {
+    position: relative; 
+    list-style: none; 
+}
+
+.navbar .logo a {
+    display: flex; 
+    align-items: center; 
+    margin-left: 0; 
+}
+
+header a, footer a {
+    margin-left: 40px; 
+    text-decoration: none; 
+    color: #fff; 
+    height: 100%; 
+    padding: 20px 0; 
+    display: inline-block; 
+}
+
+header a:hover, footer a:hover {
+    color: #ddd; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 80px; 
+}
+
+.container {
+    display: flex;
+    margin: 100px;
+}
+
+.profile-picture {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.profile-picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.user-info {
+    flex: 2;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h2 {
+    margin-top: 0;
+}
+
+.user-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-info li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+.edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.edit-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+.edit-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.edit-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

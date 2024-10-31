@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="car.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="">Legend Motor Limited</a></h2>
+            <ul class="all-links">
+                <li><a href="">Product</a></li>
+                <li><a href="" id="order">My Order</a></li>
+                <li><a href="#" id="cart-btn">Shopping Cart</a></li>
+                <li><a href="#" id="user">User</a></li>
+                <li><a href="" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="filter">
+        <button class="brand-button" data-brand="all">All</button>
+        <button class="brand-button" data-brand="Lamborghini">Lamborghini</button>
+        <button class="brand-button" data-brand="Honda">Honda</button>
+        <button class="brand-button" data-brand="Porsche">Porsche</button>
+    </div>
+
+    <div class="carlist">
+        <div class="car" data-name="Revuelto" data-price="100000000">
+            <img src="carimg/Revuelto.avif" class="carimg">
+            <h3>Revuelto</h3>
+            <h4>$100,000,000hkd</h4>
+            <input type="button" value="buy it now" class="buybutton">
+        </div>
+        <div class="car" data-name="Temerario" data-price="100000000">
+            <img src="carimg/Temerario Alleggerita.webp" class="carimg">
+            <h3>Temerario</h3>
+            <h4>$100,000,000hkd</h4>
+            <input type="button" value="buy it now" class="buybutton">
+        </div>
+        <div class="car" data-name="All-New CR-V" data-price="100000000">
+            <img src="carimg/Accord_Car_Higher_Res.png" class="carimg">
+            <h3>All-New CR-V</h3>
+            <h4>$100,000,000hkd</h4>
+            <input type="button" value="buy it now" class="buybutton">
+        </div>
+        <div class="car" data-name="Accord EX" data-price="100000000">
+            <img src="carimg/accordex.avif" class="carimg">
+            <h3>Accord EX</h3>
+            <h4>$100,000,000hkd</h4>
+            <input type="button" value="buy it now" class="buybutton">
+        </div>
+        <div class="car" data-name="Porsche Macan EV" data-price="100000000">
+            <img src="carimg/Porsche Macan EV.avif" class="carimg">
+            <h3>Porsche Macan EV</h3>
+            <h4>$100,000,000hkd</h4>
+            <input type="button" value="buy it now" class="buybutton">
+        </div>
+        <div class="car" data-name="AE86" data-price="100000000">
+            <img src="carimg/AE86.jpeg" class="carimg">
+            <h3>AE86</h3>
+            <h4>$100,000,000hkd</h4>
+            <input type="button" value="buy it now" class="buybutton">
+        </div>
+    </div>
+
+    <div class="shoppingcart">
+        <h2>Shopping Cart</h2>
+        <div id="cartitems"></div>
+        <div class="totalprice">Total: $0</div>
+        <button class="checkout">Checkout</button>
+    </div>
+
+    <div class="checkout-overlay" style="display: none;">
+        <div class="checkout-form">
+            <h2>Checkout</h2>
+            <div id="orderDetails"></div>
+            <form id="orderForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                <label for="payment">Payment Method:</label>
+                <select id="payment" required>
+                    <option value="credit">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <button type="submit">Place Order</button>
+                <button type="button" class="close-checkout">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        
+        $("#order").click(function(event) {
+            event.preventDefault();
+            window.location.href = "orderpage.html"; 
+        });
+
+        $("#logout").click(function(event) {
+            event.preventDefault();
+            window.location.href = "LoginPage.html"; 
+        });
+
+        $("#user").click(function(event) {
+            event.preventDefault();
+            window.location.href = "userpage.html"; 
+        });
+
+        let cart = [];
+        let total = 0;
+
+        $('#cart-btn').click(function() {
+            $('.shoppingcart').toggle();
+        });
+
+        $('.buybutton').click(function() {
+            const carName = $(this).closest('.car').data('name');
+            const carPrice = parseFloat($(this).closest('.car').data('price'));
+
+            cart.push({ name: carName, price: carPrice });
+            total += carPrice;
+
+            updateCart(); 
+        });
+
+        function updateCart() {
+            $('#cartitems').empty();
+            cart.forEach((item, index) => {
+                $('#cartitems').append(`
+                    <div class="cart-item">
+                        ${item.name}: $${item.price.toFixed(2)} 
+                        <button class="delete-button" data-index="${index}">Delete</button>
+                    </div>
+                `);
+            });
+
+            $('.totalprice').text(`Total: $${total.toFixed(2)}`);
+            $('.shoppingcart').show();
+        }
+
+        $(document).on('click', '.delete-button', function() {
+            const index = $(this).data('index');
+            total -= cart[index].price; 
+            cart.splice(index, 1); 
+
+            updateCart(); 
+        });
+
+        $('.checkout').click(function() {
+            $('.shoppingcart').hide(); 
+            displayOrderDetails(); 
+            $('.checkout-overlay').show(); 
+        });
+
+        function displayOrderDetails() {
+            $('#orderDetails').empty();
+            cart.forEach(item => {
+                $('#orderDetails').append(`${item.name}: $${item.price.toFixed(2)}<br>`);
+            });
+            $('#orderDetails').append(`<strong>Total: $${total.toFixed(2)}</strong>`);
+        }
+
+        $('#orderForm').submit(function(event) {
+            event.preventDefault();
+            alert('Order placed! Thank you for your purchase!');
+            cart = [];
+            total = 0;
+            updateCart();
+            $('.checkout-overlay').hide(); 
+        });
+
+        $(document).on('click', '.close-checkout', function() {
+            $('.checkout-overlay').hide(); 
+        });
+    </script>
+</body>
+</html>
