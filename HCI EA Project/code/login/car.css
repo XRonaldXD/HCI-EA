@@ -210,7 +210,7 @@ header a:hover, footer a:hover {
 .checkout-form input,
 .checkout-form select {
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px   ;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -237,4 +237,8 @@ header a:hover, footer a:hover {
 
 .close-checkout:hover {
     background-color: darkred;
+}
+
+input {
+    margin-right: 10px;
 }

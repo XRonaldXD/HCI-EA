@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="orderpage.css">
     <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../aboutus.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
@@ -16,7 +18,7 @@
             <ul class="all-links">
                 <li><a href="" id="carpage">Product</a></li>
                 <li><a href="OrderPage.html">My Order</a></li>
-                <li><a href="#" id="cart-btn">User</a></li>
+                <li><a href="#" id="user">User</a></li>
                 <li><a href="#" id="logout">logout</a></li>
             </ul>
         </nav>
@@ -33,6 +35,11 @@
         $("#logout").click(function(event) {
             event.preventDefault();
             window.location.href = "LoginPage.html"; 
+        });
+
+        $("#user").click(function(event) {
+            event.preventDefault();
+            window.location.href = "userpage.html"; 
         });
 
         $("#carpage").click(function(){

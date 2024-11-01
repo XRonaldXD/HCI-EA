@@ -26,7 +26,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(100px);
 }
 
 h2{
@@ -184,6 +184,6 @@ img{
 }
 
 #message {
-    color: red;
+    color: black;
     margin-top: 10px;
 }

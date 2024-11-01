@@ -55,7 +55,8 @@ body {
 
 .container {
     display: flex;
-    margin: 100px;
+    margin: 200px;
+    
 }
 
 .profile-picture {

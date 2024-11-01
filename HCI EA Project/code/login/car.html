@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="car.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../aboutus.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <h2 class="logo"><a href="">Legend Motor Limited</a></h2>
+            <span>
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Search cars...">
+                        <button id="search-btn">Search</button>
+                    </div>
+            </span>
             <ul class="all-links">
                 <li><a href="">Product</a></li>
                 <li><a href="" id="order">My Order</a></li>
@@ -21,50 +29,72 @@
         </nav>
     </header>
 
-    <div class="filter">
-        <button class="brand-button" data-brand="all">All</button>
-        <button class="brand-button" data-brand="Lamborghini">Lamborghini</button>
-        <button class="brand-button" data-brand="Honda">Honda</button>
-        <button class="brand-button" data-brand="Porsche">Porsche</button>
-    </div>
-
+    
+    
     <div class="carlist">
-        <div class="car" data-name="Revuelto" data-price="100000000">
-            <img src="carimg/Revuelto.avif" class="carimg">
-            <h3>Revuelto</h3>
-            <h4>$100,000,000hkd</h4>
-            <input type="button" value="buy it now" class="buybutton">
-        </div>
-        <div class="car" data-name="Temerario" data-price="100000000">
-            <img src="carimg/Temerario Alleggerita.webp" class="carimg">
-            <h3>Temerario</h3>
-            <h4>$100,000,000hkd</h4>
-            <input type="button" value="buy it now" class="buybutton">
-        </div>
-        <div class="car" data-name="All-New CR-V" data-price="100000000">
-            <img src="carimg/Accord_Car_Higher_Res.png" class="carimg">
-            <h3>All-New CR-V</h3>
-            <h4>$100,000,000hkd</h4>
-            <input type="button" value="buy it now" class="buybutton">
-        </div>
-        <div class="car" data-name="Accord EX" data-price="100000000">
-            <img src="carimg/accordex.avif" class="carimg">
-            <h3>Accord EX</h3>
-            <h4>$100,000,000hkd</h4>
-            <input type="button" value="buy it now" class="buybutton">
-        </div>
-        <div class="car" data-name="Porsche Macan EV" data-price="100000000">
-            <img src="carimg/Porsche Macan EV.avif" class="carimg">
-            <h3>Porsche Macan EV</h3>
-            <h4>$100,000,000hkd</h4>
-            <input type="button" value="buy it now" class="buybutton">
-        </div>
-        <div class="car" data-name="AE86" data-price="100000000">
-            <img src="carimg/AE86.jpeg" class="carimg">
-            <h3>AE86</h3>
-            <h4>$100,000,000hkd</h4>
-            <input type="button" value="buy it now" class="buybutton">
-        </div>
+        
+            <div class="car" data-name="Revuelto" data-price="100000000">
+                <img src="carimg/Revuelto.avif" class="carimg">
+                <h3>Revuelto</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+            <!-- Add other car divs here -->
+            <div class="car" data-name="Revuelto" data-price="100000000">
+                <img src="carimg/Revuelto.avif" class="carimg">
+                <h3>Revuelto</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+            <div class="car" data-name="Temerario" data-price="100000000">
+                <img src="carimg/Temerario Alleggerita.webp" class="carimg">
+                <h3>Temerario</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+            <div class="car" data-name="All-New CR-V" data-price="100000000">
+                <img src="carimg/Accord_Car_Higher_Res.png" class="carimg">
+                <h3>All-New CR-V</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+            <div class="car" data-name="Accord EX" data-price="100000000">
+                <img src="carimg/accordex.avif" class="carimg">
+                <h3>Accord EX</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+            <div class="car" data-name="Porsche Macan EV" data-price="100000000">
+                <img src="carimg/Porsche Macan EV.avif" class="carimg">
+                <h3>Porsche Macan EV</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+            <div class="car" data-name="AE86" data-price="100000000">
+                <img src="carimg/AE86.jpeg" class="carimg">
+                <h3>AE86</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">buy it now</button>
+            </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Add event listener to the search button
+                $('#search-btn').click(function() {
+                    const searchTerm = $('#search-input').val().toLowerCase();
+                    $('.car').each(function() {
+                        const carName = $(this).data('name').toLowerCase();
+                        if (carName.includes(searchTerm)) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
+            });
+        </script>
+        
     </div>
 
     <div class="shoppingcart">
@@ -82,7 +112,7 @@
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
                 <label for="address">Address:</label>
-                <input type="text" id="address" required>
+                <input type="email" id="address" required>
                 <label for="payment">Payment Method:</label>
                 <select id="payment" required>
                     <option value="credit">Credit Card</option>
@@ -114,11 +144,11 @@
         let cart = [];
         let total = 0;
 
-        $('#cart-btn').click(function() {
+        $('.cart-btn').click(function() {
             $('.shoppingcart').toggle();
         });
 
-        $('.buybutton').click(function() {
+        $('.cart-btn').click(function() {
             const carName = $(this).closest('.car').data('name');
             const carPrice = parseFloat($(this).closest('.car').data('price'));
 

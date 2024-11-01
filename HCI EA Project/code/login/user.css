@@ -27,7 +27,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(100px);
 }
 
 
