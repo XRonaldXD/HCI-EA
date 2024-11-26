@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Application - Legend Motor Limited</title>
+    <link rel="stylesheet" href="trackApplication.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="../quote.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#car">Car</a></li>
+                <li><a href="/insurance/insuranceCoverage.html">Insurance</a></li>
+                <li><a href="/insurance/inventory/inventory.html">Application List</a></li>
+                <li><a href="#contact">Track Application</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="track-application">
+            <h1>Track Your Application</h1>
+            <div class="application-status">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quote ID</th>
+                            <th>Vehicle Model</th>
+                            <th>Insurance Coverage</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="application-table-body">
+                        <!-- Application status data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Email: cw-cs@vtc.edu.hk</p>
+        <p>Phone: (852) 2595 8333</p>
+    </footer>
+
+    <script src="trackApplication.js"></script>
+</body>
+</html>
