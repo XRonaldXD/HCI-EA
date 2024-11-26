@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="register.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#car">Car</a></li>
+                <li><a href="/insurance/insuranceCoverage.html">Insurance</a></li>
+                <li><a href="/aboutus.html">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <span id="login"><a href="/login/LoginPage.html">Login</a></span>
+        </nav>
+    </header>
+
+    <section>
+        <div class="Login-Box">
+
+            <img src="/login/pngwing.png" id="backimg" width="30" height="30">
+            
+            <h2 id="registrationTitle">Registration Options</h2>
+            <div id="registrationOptions">
+                <a href="#" class="registration-btn" data-target="#customerRegistration">Customer</a>
+                <a href="#" class="registration-btn" data-target="#salesRegistration">Vehicle Sales Personnel</a>
+                <a href="#" class="registration-btn" data-target="#insuranceRegistration">Insurance Sales Personnel</a>
+            </div>
+
+            <div id="customerRegistration" class="container registration-form" style="display: none;">
+                <form id="customerForm">
+                    <div class="form-group">
+                        <label for="customerName">Name</label>
+                        <input type="text" id="customerName" required>
+                        <div class="error" id="customerNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email</label>
+                        <input type="email" id="customerEmail" required>
+                        <div class="error" id="customerEmailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number</label>
+                        <input type="tel" id="customerPhone" required>
+                        <div class="error" id="customerPhoneError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <button type="button" class="btn back-btn">Back to Options</button>
+                </form>
+            </div>
+
+            <div id="salesRegistration" class="container registration-form" style="display: none;">
+                <form id="salesForm">
+                    <div class="form-group">
+                        <label for="salesName">Name</label>
+                        <input type="text" id="salesName" required>
+                        <div class="error" id="salesNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="salesEmail">Email</label>
+                        <input type="email" id="salesEmail" required>
+                        <div class="error" id="salesEmailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="salesPhone">Phone Number</label>
+                        <input type="tel" id="salesPhone" required>
+                        <div class="error" id="salesPhoneError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="staffNumber">Staff Number</label>
+                        <input type="text" id="staffNumber" required>
+                        <div class="error" id="staffNumberError"></div>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <button type="button" class="btn back-btn">Back to Options</button>
+                </form>
+            </div>
+
+            <div id="insuranceRegistration" class="container registration-form" style="display: none;">
+                <form id="insuranceForm">
+                    <div class="form-group">
+                        <label for="insuranceName">Name</label>
+                        <input type="text" id="insuranceName" required>
+                        <div class="error" id="insuranceNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="insuranceEmail">Email</label>
+                        <input type="email" id="insuranceEmail" required>
+                        <div class="error" id="insuranceEmailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="insurancePhone">Phone Number</label>
+                        <input type="tel" id="insurancePhone" required>
+                        <div class="error" id="insurancePhoneError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="insuranceStaffNumber">Staff Number</label>
+                        <input type="text" id="insuranceStaffNumber" required>
+                        <div class="error" id="insuranceStaffNumberError"></div>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <button type="button" class="btn back-btn">Back to Options</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
