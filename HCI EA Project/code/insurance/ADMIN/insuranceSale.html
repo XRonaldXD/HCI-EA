@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Sale Handling Process</title>
+    <link rel="stylesheet" href="insuranceSale.css">
+    <link rel="stylesheet" href="/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#car">Car</a></li>
+                <li><a href="/insurance/ADMIN/Request/quotationRequest.html">Quotation Requests</a></li>
+                <li><a href="/insurance/inventory/inventory.html">Manage</a></li>
+                <li><a href="/insurance/track/trackApplication.html">Track</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="insurance-sale-handling">
+            <h1>Insurance Sale Handling Process</h1>
+            <div class="container">
+                <div class="process-step">
+                    <h2>Receive Quotation Requests</h2>
+                    <p>Process incoming insurance quotation requests efficiently.</p>
+                    <button class="btn" id="view-requests">View Requests</button>
+                </div>
+                <div class="process-step">
+                    <h2>Manage Quotations</h2>
+                    <p>Effectively manage and generate insurance quotations.</p>
+                    <button class="btn" id="manage-quotations">Manage Quotations</button>
+                </div>
+                <div class="process-step">
+                    <h2>Track Quotation Status</h2>
+                    <p>Monitor the status of insurance quotes and communicate with customers.</p>
+                    <button class="btn" id="track-status">Track Status</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="insuranceSale.js"></script>
+</body>
+</html>
