@@ -40,3 +40,11 @@
     padding: 15px;
     margin: 20px 0;
 }
+
+
+.hero-card h1 {
+    font-size: 2.5rem; /* Increase font size */
+    color: white; /* Change text color */
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
+    margin-bottom: 20px; /* Spacing below the heading */
+}

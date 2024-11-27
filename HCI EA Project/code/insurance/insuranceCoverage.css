@@ -69,3 +69,10 @@ button {
 .add-to-application-btn:hover {
     background-color: #f5f8ff;
 }
+
+.hero-card h1 {
+    font-size: 2.5rem; /* Increase font size */
+    color: white; /* Change text color */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
