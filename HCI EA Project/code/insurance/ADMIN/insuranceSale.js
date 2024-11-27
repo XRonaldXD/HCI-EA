@@ -22,6 +22,7 @@ function displayQuotationRequests() {
 
 function displayQuotationManagement() {
     console.log("Displaying quotation management interface...");
+    window.location.href = "/insurance/ADMIN/Manage/manageQuotation.html";
 }
 
 function displayQuotationStatus() {
