@@ -27,4 +27,5 @@ function displayQuotationManagement() {
 
 function displayQuotationStatus() {
     console.log("Displaying quotation status tracking...");
+    window.location.href = "/insurance/ADMIN/Track/quotationTracking.html";
 }

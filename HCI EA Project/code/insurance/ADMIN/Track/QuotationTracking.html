@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Quotation Status</title>
+    <link rel="stylesheet" href="quotationTracking.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/insurance/quote.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../insuranceSale.html">Admin Home</a></li>
+                <li><a href="../Request/quotationRequest.html">Quotation Requests</a></li>
+                <li><a href="../Manage/manageQuotation.html">Manage</a></li>
+                <li><a href="../Track/QuotationTracking.html">Track</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="quotation-tracking">
+            <h1>Track Insurance Quote</h1>
+            <form id="tracking-form">
+                <div class="form-group">
+                    <label for="quoteID">Enter Quote ID:</label>
+                    <input type="text" id="quoteID" required>
+                </div>
+                <button type="submit" class="btn">Track Status</button>
+            </form>
+
+            <div id="status-result" class="status-result" style="display: none;">
+                <h2>Quotation Status</h2>
+                <p id="status-message"></p>
+                <div class="customer-communication">
+                    <h3>Remark for customer</h3>
+                    <textarea id="customer-message" placeholder="Leave a remark..."></textarea>
+                    <button id="send-message" class="btn">Send Message</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="quotationTracking.js"></script>
+</body>
+</html>
