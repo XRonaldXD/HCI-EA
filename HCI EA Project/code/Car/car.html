@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="car.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="">Legend Motor Limited</a></h2>
+            <span>
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Search cars...">
+                        <button id="search-btn">Search</button>
+                    </div>
+            </span>
+            <ul class="all-links">
+                <li><a href="" id="product">Product</a></li>
+                <li><a href="" id="order">My Order</a></li>
+                <li><a href="#" id="wishlistpage">Wish List</a></li>
+                <li><a href="#" id="user">User</a></li>
+                <li><a href="" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="shoppingcart" id="shoppingCart">
+        <h2>Wish List</h2>
+        <div id="cartitems"></div>
+        <div class="totalprice">Total: $0</div>
+        <button class="checkout">add to Wish List</button>
+    </div>
+    <img src="icon/wishlist.png"  class="wishlist" id="wishlist" width="80" height="80">
+    <div class="car-bar">
+        <div class="car-item">ALL</div>
+        <div class="car-item">BMW</div>
+        <div class="car-item">Porsche</div>
+        <div class="car-item">Honda</div>
+        <div class="car-item">Toyota</div>
+        <div class="car-item">McLaren</div>
+    </div>
+    
+
+
+    <div class="content">    
+        <div class="carlist">
+        
+            <div class="car" data-name="Revuelto" data-brand="McLaren" data-price="100000000">
+                <img src="carimg/Revuelto.avif" class="carimg">
+                <h3>Revuelto</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="Temerario" data-brand="McLaren" data-price="100000000">
+                <img src="carimg/Temerario Alleggerita.webp" class="carimg">
+                <h3>Temerario</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="All-New CR-V" data-brand="Honda" data-price="100000000">
+                <img src="carimg/Accord_Car_Higher_Res.png" class="carimg">
+                <h3>All-New CR-V</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="Accord EX" data-brand="Honda" data-price="100000000">
+                <img src="carimg/accordex.avif" class="carimg">
+                <h3>Accord EX</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="Porsche Macan EV"  data-brand="Porsche" data-price="100000000">
+                <img src="carimg/Porsche Macan EV.avif" class="carimg">
+                <h3>Porsche Macan EV</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="AE86" data-brand="Toyota"  data-price="100000000">
+                <img src="carimg/AE86.jpeg" class="carimg">
+                <h3>AE86</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="BMW_i4" data-brand="BMW" d data-price="100000000">
+                <img src="carimg/i4.png" class="carimg">
+                <h3>BMW_i4</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="BMW_i7" data-brand="BMW" data-price="100000000">
+                <img src="carimg/i7.png" class="carimg">
+                <h3>BMW_i7</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+            <div class="car" data-name="BMW_i4" data-brand="BMW" data-price="100000000">
+                <img src="carimg/ix2.png" class="carimg">
+                <h3>BMW_ix2</h3>
+                <h4>$100,000,000hkd</h4>
+                <button class="cart-btn">add to Wish List</button>
+            </div>
+    </div>
+</div>
+
+<div class="message" id="cartMessage"></div>
+
+<footer id="contact">
+    <p>Email: cw-cs@vtc.edu.hk</p>
+    <p>Phone: (852) 2595 8333</p>
+</footer>
+
+
+    <script>
+        
+        $('.car-item').click(function() {
+        const selectedBrand = $(this).text();
+
+        $('.car').hide();
+
+        if (selectedBrand === 'ALL') {
+            $('.car').show(); 
+        } else {
+            $('.car').each(function() {
+                const carName = $(this).data('brand');
+                if (carName.includes(selectedBrand)) {
+                    $(this).show(); 
+                }
+            });
+        }
+
+        $('.car-item').removeClass('selected');
+        $(this).addClass('selected');
+        });
+
+        $("#order").click(function(event) {
+            event.preventDefault();
+            window.location.href = "order.html"; 
+        });
+
+        $("#wishlistpage").click(function(event) {
+            event.preventDefault();
+            window.location.href = "wishlist.html"; 
+        });
+
+        $("#logout").click(function(event) {
+            event.preventDefault();
+            window.location.href = "../login/LoginPage.html"; 
+        });
+
+        $("#user").click(function(event) {
+            event.preventDefault();
+            window.location.href = "userpage.html"; 
+        });
+
+        $(document).ready(function() {
+                $('#search-btn').click(function() {
+                    const searchTerm = $('#search-input').val().toLowerCase();
+                    $('.car').each(function() {
+                        const carName = $(this).data('name').toLowerCase();
+                        if (carName.includes(searchTerm)) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
+            });
+
+
+        $("#wishlist").click(function(event) {
+            var cart = document.getElementById('shoppingCart');
+        if (cart.style.display === 'block') {
+            cart.style.display = 'none';
+        } else {
+            cart.style.display = 'block';
+        }
+        });
+
+        let cart = [];
+        let total = 0;
+
+
+        $('.cart-btn').click(function() {
+            const carName = $(this).closest('.car').data('name');
+            const carPrice = parseFloat($(this).closest('.car').data('price'));
+
+            cart.push({ name: carName, price: carPrice });
+            total += carPrice;
+            $('#cartMessage').text(`${carName} is added to shopping cart`).css('background-color', 'green').show();
+                setTimeout(() => {
+                $('#cartMessage').fadeOut(); 
+                }, 1500);
+            updateCart(); 
+        });
+
+        function updateCart() {
+            $('#cartitems').empty();
+            cart.forEach((item, index) => {
+                $('#cartitems').append(`
+                    <div class="cart-item">
+                        ${item.name}: $${item.price.toFixed(2)} 
+                        <button class="delete-button" data-index="${index}">Delete</button>
+                    </div>
+                `);
+            });
+            $('.totalprice').text(`Total: $${total.toFixed(2)}`);
+            
+        }
+
+        $(document).on('click', '.delete-button', function() {
+            const index = $(this).data('index');
+            name = cart[index].name; 
+            total -= cart[index].price; 
+            cart.splice(index, 1); 
+            
+            updateCart(); 
+            $('#cartMessage').text(`${name} is deleted`).css('background-color', 'red').show();
+                setTimeout(() => {
+                $('#cartMessage').fadeOut(); 
+                }, 1500);
+        });
+
+        $('.checkout').click(function() {
+            if(cart.length!=0){
+            $('#cartMessage').text(`Wish List Add Successful`).css('background-color', 'green').show();
+                setTimeout(() => {
+                $('#cartMessage').fadeOut(); 
+                }, 1500);
+            }else{
+                $('#cartMessage').text(`No item in Wish List`).css('background-color', 'red').show();
+                setTimeout(() => {
+                $('#cartMessage').fadeOut(); 
+                }, 1500);
+            }
+        });
+
+    </script>
+</body>
+</html>

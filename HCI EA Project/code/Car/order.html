@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="order.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../main.css">
+        <title>Document</title>
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="">Legend Motor Limited</a></h2>
+            <span>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search cars...">
+                    <button id="search-btn">Search</button>
+                </div>
+        </span>
+            <ul class="all-links">
+                <li><a href="" id="product">Product</a></li>
+                <li><a href="" id="order">My Order</a></li>
+                <li><a href="#" id="wishlistpage">Wish List</a></li>
+                <li><a href="#" id="user">User</a></li>
+                <li><a href="" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="order-header">
+            <h2>Your Orders</h2>
+        </div>
+
+        <div class="order-list">
+
+            <div class="order" id="order1">
+                <div class="order-summary">
+                    <div class="order-state completed">Completed</div>
+                    <h3>Order #12345</h3>
+                    <p>Date: 2024-10-01</p>
+                    <p>Items: Lamborghini Revuelto, Porsche Macan EV</p>
+                    <p>Total: $200,000,000</p>
+                    <button class="show-details-btn">Show Details</button>
+                </div>
+                <div class="order-details" style="display: none;">
+                    <h4>Order Details</h4>
+                    
+          
+                    <div class="info-section">
+                        <h5>Personal Information</h5>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Full Name:</strong></div>
+                            <div class="info-input"><input type="text" value="John Doe" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Email:</strong></div>
+                            <div class="info-input"><input type="email" value="john.doe@example.com" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Phone Number:</strong></div>
+                            <div class="info-input"><input type="tel" value="123-456-7890" disabled /></div>
+                        </div>
+                    </div>
+        
+              
+                    <div class="info-section">
+                        <h5>Delivery Information</h5>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Address:</strong></div>
+                            <div class="info-input"><input type="text" value="123 Main St" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>City:</strong></div>
+                            <div class="info-input"><input type="text" value="City" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Postal Code:</strong></div>
+                            <div class="info-input"><input type="text" value="12345" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Country:</strong></div>
+                            <div class="info-input"><input type="text" value="Country" disabled /></div>
+                        </div>
+                    </div>
+    
+       
+                    <div class="info-section">
+                        <h5>Payment Information</h5>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Card Number:</strong></div>
+                            <div class="info-input"><input type="text" value="**** **** **** 1234" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Expiry Date:</strong></div>
+                            <div class="info-input"><input type="text" value="MM/YY" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Cardholder Name:</strong></div>
+                            <div class="info-input"><input type="text" value="John Doe" disabled /></div>
+                        </div>
+                    </div>
+        
+                    <button class="edit-btn">Edit</button>
+                </div>
+            </div>
+            
+  
+            <div class="order" id="order2">
+                <div class="order-summary">
+                    <div class="order-state pending">Pending</div>
+                    <h3>Order #12346</h3>
+                    <p>Date: 2024-10-05</p>
+                    <p>Items: Honda Accord EX</p>
+                    <p>Total: $100,000,000</p>
+                    <button class="show-details-btn">Show Details</button>
+                </div>
+                <div class="order-details" style="display: none;">
+                    <h4>Order Details</h4>
+
+                    <div class="info-section">
+                        <h5>Personal Information</h5>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Full Name:</strong></div>
+                            <div class="info-input"><input type="text" value="Jane Smith" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Email:</strong></div>
+                            <div class="info-input"><input type="email" value="jane.smith@example.com" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Phone Number:</strong></div>
+                            <div class="info-input"><input type="tel" value="987-654-3210" disabled /></div>
+                        </div>
+                    </div>
+    
+                    <div class="info-section">
+                        <h5>Delivery Information</h5>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Address:</strong></div>
+                            <div class="info-input"><input type="text" value="456 Another St" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>City:</strong></div>
+                            <div class="info-input"><input type="text" value="New City" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Postal Code:</strong></div>
+                            <div class="info-input"><input type="text" value="67890" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Country:</strong></div>
+                            <div class="info-input"><input type="text" value="Country" disabled /></div>
+                        </div>
+                    </div>
+        
+ 
+                    <div class="info-section">
+                        <h5>Payment Information</h5>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Card Number:</strong></div>
+                            <div class="info-input"><input type="text" value="**** **** **** 5678" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Expiry Date:</strong></div>
+                            <div class="info-input"><input type="text" value="MM/YY" disabled /></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label"><strong>Cardholder Name:</strong></div>
+                            <div class="info-input"><input type="text" value="Jane Smith" disabled /></div>
+                        </div>
+                    </div>
+        
+                    <button class="edit-btn">Edit</button>
+                </div>
+            </div>              
+<div class="order" id="order3">
+    <div class="order-summary">
+        <div class="order-state cancelled">Cancelled</div>
+        <h3>Order #12347</h3>
+        <p>Date: 2024-10-10</p>
+        <p>Items: All-New CR-V</p>
+        <p>Total: $100,000,000</p>
+        <button class="show-details-btn">Show Details</button>
+    </div>
+    <div class="order-details" style="display: none;">
+        <h4>Order Details</h4>
+
+        <div class="info-section">
+            <h5>Personal Information</h5>
+            <div class="info-row">
+                <div class="info-label"><strong>Full Name:</strong></div>
+                <div class="info-input"><input type="text" value="Emily White" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>Email:</strong></div>
+                <div class="info-input"><input type="email" value="emily.white@example.com" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>Phone Number:</strong></div>
+                <div class="info-input"><input type="tel" value="555-234-6789" disabled /></div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h5>Delivery Information</h5>
+            <div class="info-row">
+                <div class="info-label"><strong>Address:</strong></div>
+                <div class="info-input"><input type="text" value="789 New St" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>City:</strong></div>
+                <div class="info-input"><input type="text" value="New City" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>Postal Code:</strong></div>
+                <div class="info-input"><input type="text" value="54321" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>Country:</strong></div>
+                <div class="info-input"><input type="text" value="Country" disabled /></div>
+            </div>
+        </div>
+        <div class="info-section">
+            <h5>Payment Information</h5>
+            <div class="info-row">
+                <div class="info-label"><strong>Card Number:</strong></div>
+                <div class="info-input"><input type="text" value="**** **** **** 2345" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>Expiry Date:</strong></div>
+                <div class="info-input"><input type="text" value="MM/YY" disabled /></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label"><strong>Cardholder Name:</strong></div>
+                <div class="info-input"><input type="text" value="Emily White" disabled /></div>
+            </div>
+        </div>
+
+        <button class="edit-btn">Edit</button>
+    </div>
+</div>
+
+        </div>
+        
+
+    <footer id="contact">
+        <p>Email: cw-cs@vtc.edu.hk</p>
+        <p>Phone: (852) 2595 8333</p>
+    </footer>
+</body>
+
+<script>
+     $("#wishlistpage").click(function(event) {
+            event.preventDefault();
+            window.location.href = "wishlist.html"; 
+        });
+
+        $("#product").click(function(event) {
+            event.preventDefault();
+            window.location.href = "car.html"; 
+        });
+
+        $("#logout").click(function(event) {
+            event.preventDefault();
+            window.location.href = "../login/LoginPage.html"; 
+        });
+
+        $("#user").click(function(event) {
+            event.preventDefault();
+            window.location.href = "userpage.html"; 
+        });
+
+
+            $('.show-details-btn').click(function() {
+                var $orderDetails = $(this).closest('.order').find('.order-details');
+                var isVisible = $orderDetails.is(':visible');
+
+                if (isVisible) {
+                    $orderDetails.slideUp(); 
+                    $(this).text('Show Details');
+                } else {
+                    $orderDetails.slideDown(); 
+                    $(this).text('Hide Details');
+                }
+            });
+
+            $('.edit-btn').click(function() {
+                var $inputs = $(this).closest('.order-details').find('input');
+    var isDisabled = $inputs.prop('disabled');
+
+    $inputs.prop('disabled', !isDisabled);
+
+    if (isDisabled) {
+        $(this).text('Save');
+    } else {
+        $(this).text('Edit');
+    }
+            });
+</script>
+</html>
