@@ -59,3 +59,15 @@ th {
 .quotation-list.hidden {
     display: none;
 }
+
+#updateStatus {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#updateStatus:hover {
+    background-color: #45a049;
+    /* Slightly darker green on hover */
+}

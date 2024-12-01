@@ -86,6 +86,14 @@ select {
     /* Blue color for edit button */
     color: #fff;
     /* White text color */
+    transition: background-color 0.3s ease;
+
+}
+
+.Edit-btn:hover{
+    background-color: #0062cc;
+
+
 }
 
 .submit-btn {
