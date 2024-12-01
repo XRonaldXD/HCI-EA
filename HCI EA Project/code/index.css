@@ -48,3 +48,10 @@
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
     margin-bottom: 20px; /* Spacing below the heading */
 }
+
+.vehicle-card img {
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+.vehicle-card img:hover {
+    transform: scale(1.1); /* Zoom in effect */
+}
