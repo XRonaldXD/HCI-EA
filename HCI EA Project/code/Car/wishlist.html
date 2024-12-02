@@ -86,6 +86,9 @@
                     <input type="text" id="fullName" name="fullName">
                 </div>
                 <div class="form-group">
+
+                </div>
+                <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" id="firstName" name="firstName">
                 </div>
@@ -107,20 +110,30 @@
             <div class="modal-header">Delivery Information</div>
             <form>
                 <div class="form-group">
+                    <label for="city">region:</label>
+                    <select id="city" name="city">
+                        <option value="hongkong">Hong Kong</option>
+                        <option value="kowloon">Kowloon</option>
+                        <option value="nt">New Territories</option>
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <label for="district">Area:</label>
+                    <select id="district" name="district">
+             
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <label for="area">District:</label>
+                    <select id="area" name="area">
+      
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address">
-                </div>
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" id="city" name="city">
-                </div>
-                <div class="form-group">
-                    <label for="area">Area</label>
-                    <input type="text" id="area" name="area">
-                </div>
-                <div class="form-group">
-                    <label for="district">District</label>
-                    <input type="text" id="district" name="district">
                 </div>
                 <div class="form-group">
                     <label>
@@ -257,6 +270,77 @@ $('.remove-btn').click(function() {
                 $('#cartMessage').text(`Order Created Successfullyt`).css('background-color', 'green').show();
                 $('#paymentModalOverlay').fadeOut();
             });
+
+    
+            const districts = {
+        hongkong: [
+            "Central", "Admiralty", "Wan Chai", "Causeway Bay", "Sheung Wan", "Sai Ying Pun", "Mid-Levels"
+        ],
+        kowloon: [
+            "Tsim Sha Tsui", "Yau Ma Tei", "Mong Kok", "Hung Hom", "Jordan", "Kowloon Tong"
+        ],
+        nt: [
+            "Sha Tin", "Tai Po", "Yuen Long", "Tuen Mun", "Tsuen Wan", "Kwai Chung", "Fanling"
+        ]
+    };
+
+    const areas = {
+    "Central": ["Des Voeux Road Central", "Chater Road", "Garden Road", "Queen's Road Central"],
+    "Admiralty": ["Harbour Road", "Jardine's Bazaar", "Queensway"],
+    "Wan Chai": ["Lockhart Road", "Hennessy Road", "Gloucester Road"],
+    "Causeway Bay": ["Russell Street", "Yee Wo Street", "Hennessy Road"],
+    "Sheung Wan": ["Hollywood Road", "Bonham Strand", "Des Voeux Road West"],
+    "Sai Ying Pun": ["Third Street", "Fourth Street", "Bonham Road"],
+    "Mid-Levels": ["Conduit Road", "Robinson Road", "Old Peak Road"],
+    "Tsim Sha Tsui": ["Nathan Road", "Peking Road", "Canton Road", "Mody Road"],
+    "Yau Ma Tei": ["Nathan Road", "Shanghai Street", "Temple Street", "Parkes Street"],
+    "Mong Kok": ["Sai Yeung Choi Street", "Fa Yuen Street", "Nathan Road"],
+    "Hung Hom": ["Ma Tau Wai Road", "Hung Hom Road", "Chatham Road North"],
+    "Jordan": ["Nathan Road", "Parkes Street", "Temple Street"],
+    "Kowloon Tong": ["Waterloo Road", "Beacon Hill Road", "Argyle Street"],
+    "Sha Tin": ["Shatin Centre", "Lek Yuen", "Siu Lek Yuen"],
+    "Tai Po": ["Tai Po Market", "Tai Po New Town", "Tai Po District"],
+    "Yuen Long": ["Castle Peak Road", "Yuen Long Town", "Long Ping"],
+    "Tuen Mun": ["Tuen Mun Town Plaza", "Tuen Mun Road", "Castle Peak Road"],
+    "Tsuen Wan": ["Sha Tsui Road", "Castle Peak Road", "Yeung Uk Road"],
+    "Kwai Chung": ["Kwai Hing", "Kwai Fong", "Kwai Chung Road"],
+    "Fanling": ["Fanling Town Centre", "Lung Shing Road", "Choi Yuen Road"],
+    "Discovery Bay": ["Discovery Bay Road", "South Lantau Road", "The Discovery Bay Plaza"],
+    "North District": ["Sheung Shui", "Fanling", "Kwu Tung"]
+};
+
+    $('#city').change(function() {
+        const city = $(this).val();
+        const districtOptions = districts[city] || [];
+        $('#district').empty();
+        
+
+        $('#district').append('<option value="">Select District</option>');
+        
+
+        districtOptions.forEach(function(district) {
+            $('#district').append(new Option(district, district));
+        });
+
+
+        $('#area').empty();
+        $('#area').append('<option value="">Select Area</option>');
+    });
+
+
+    $('#district').change(function() {
+        const district = $(this).val();
+        const areaOptions = areas[district] || [];
+        $('#area').empty();
+        
+
+        $('#area').append('<option value="">Select Area/Address</option>');
+        
+
+        areaOptions.forEach(function(area) {
+            $('#area').append(new Option(area, area));
+        });
+    });
       </script>
       
 </html>

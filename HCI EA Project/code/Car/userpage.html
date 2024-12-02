@@ -41,6 +41,14 @@
                     <div class="info-input"><input type="text" id="full-name" value="Jane Doe" disabled /></div>
                 </div>
                 <div class="info-row">
+                    <div class="info-label"><strong>First Name:</strong></div>
+                    <div class="info-input"><input type="text" id="first-name" value="chan" disabled /></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label"><strong>Last Name:</strong></div>
+                    <div class="info-input"><input type="text" id="last-name" value="Tai Man" disabled /></div>
+                </div>
+                <div class="info-row">
                     <div class="info-label"><strong>Email:</strong></div>
                     <div class="info-input"><input type="email" id="email" value="jane.doe@example.com" disabled /></div>
                 </div>
@@ -53,20 +61,20 @@
             <div class="info-section">
                 <h5>Address Information</h5>
                 <div class="info-row">
+                    <div class="info-label"><strong>Region:</strong></div>
+                    <div class="info-input"><input type="text" value="Hong Kong" disabled /></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label"><strong>Area:</strong></div>
+                    <div class="info-input"><input type="text" value="Central" disabled /></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label"><strong>District:</strong></div>
+                    <div class="info-input"><input type="text" value="Chater Road" disabled /></div>
+                </div>
+                <div class="info-row">
                     <div class="info-label"><strong>Address:</strong></div>
-                    <div class="info-input"><input type="text" id="address" value="123 Main St" disabled /></div>
-                </div>
-                <div class="info-row">
-                    <div class="info-label"><strong>City:</strong></div>
-                    <div class="info-input"><input type="text" id="city" value="City" disabled /></div>
-                </div>
-                <div class="info-row">
-                    <div class="info-label"><strong>Postal Code:</strong></div>
-                    <div class="info-input"><input type="text" id="postal-code" value="12345" disabled /></div>
-                </div>
-                <div class="info-row">
-                    <div class="info-label"><strong>Country:</strong></div>
-                    <div class="info-input"><input type="text" id="country" value="Country" disabled /></div>
+                    <div class="info-input"><input type="text" value="" disabled /></div>
                 </div>
             </div>
 
@@ -82,7 +90,7 @@
             <button class="save-btn" style="display: none;">Save</button>
         </div>
     </div>
-
+    <div class="message" id="cartMessage"></div>
     <footer>
         <p>Email: cw-cs@vtc.edu.hk</p>
         <p>Phone: (852) 2595 8333</p>
@@ -123,6 +131,10 @@
         $('input').prop('disabled', true);  
         $('.edit-btn').show(); 
         $('.save-btn').hide(); 
+        $('#cartMessage').text(`Edit user information successful`).css('background-color', 'green').show();
+                setTimeout(() => {
+                $('#cartMessage').fadeOut(); 
+                }, 1500);
     });
 });
 </script>

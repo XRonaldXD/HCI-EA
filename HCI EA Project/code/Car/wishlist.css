@@ -225,3 +225,20 @@ input {
     cursor: pointer;
     color: #555;
   }
+
+  .form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

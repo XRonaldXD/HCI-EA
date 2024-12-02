@@ -230,6 +230,11 @@
                 setTimeout(() => {
                 $('#cartMessage').fadeOut(); 
                 }, 1500);
+
+                cart = [];
+                total = 0;
+                updateCart(); 
+
             }else{
                 $('#cartMessage').text(`No item in Wish List`).css('background-color', 'red').show();
                 setTimeout(() => {

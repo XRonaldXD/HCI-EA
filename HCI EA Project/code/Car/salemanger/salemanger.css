@@ -56,67 +56,42 @@ input {
     padding: 0;
     padding-bottom: 50px; 
 }
-
-.user-header h2 {
+.order-header h2 {
     text-align: center;
     font-size: 28px;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
 
-.user-details {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-.info-section {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.info-row {
-    display: flex;
-    margin-bottom: 10px;
-    align-items: center;
-}
-
-.info-label {
-    width: 150px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-    margin-right: 10px;
-}
-
-.info-input input {
+table th, table td {
+    border: 1px solid #ddd;
     padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-}
-
-input:disabled {
-    background-color: #f0f0f0;
-}
-
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
+
+table th {
+    background-color: #f4f4f4;
+}
+
+.details-row {
+    background-color: #f9f9f9;
+}
+
+.details-content {
+    text-align: left;
+    padding: 10px;
+}
+
+.details-content h4 {
+    margin-top: 0;
+}
+
 .message {
     display: none;
     position: fixed;

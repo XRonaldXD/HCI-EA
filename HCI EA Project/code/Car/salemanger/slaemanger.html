@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="salemanger.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../../main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="../index.html">Legend Motor Limited</a></h2>
+
+            <ul class="all-links">
+                <li><a href="" id="order">Order</a></li>
+                <li><a href="" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+    <div class="order-header">
+        <h2>Orders</h2>
+    </div>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <tr class="order-row">
+                    <td>12347</td>
+                    <td>2024-10-10</td>
+                    <td>Emily White</td>
+                    <td>$100,000,000</td>
+                    <td class="order-status">Cancelled</td>
+                    <td>
+                        <button class="toggle-details-btn">Details</button>
+                    </td>
+                </tr>
+                <tr class="details-row" style="display: none;">
+                    <td colspan="6">
+                        <div class="details-content">
+                            <h4>Order Details</h4>
+                            <p><strong>Email:</strong> emily.white@example.com</p>
+                            <p><strong>Phone:</strong> 555-234-6789</p>
+                            <p><strong>Region:</strong> Hong Kong</p>
+                            <p><strong>Area:</strong> Central</p>
+                            <p><strong>District:</strong> Chater Road</p>
+                            <p><strong>Card:</strong> **** **** **** 2345</p>
+                            <label for="status-select">Change Status:</label>
+                            <select class="status-select">
+                                <option value="Processing">Processing</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled" selected>Cancelled</option>
+                            </select>
+                            <button class="save-status-btn">Save</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody id="order-list">
+                <tr class="order-row">
+                    <td>12347</td>
+                    <td>2024-10-10</td>
+                    <td>Emily White</td>
+                    <td>$100,000,000</td>
+                    <td class="order-status">Cancelled</td>
+                    <td>
+                        <button class="toggle-details-btn">Details</button>
+                    </td>
+                </tr>
+                <tr class="details-row" style="display: none;">
+                    <td colspan="6">
+                        <div class="details-content">
+                            <h4>Order Details</h4>
+                            <p><strong>Email:</strong> emily.white@example.com</p>
+                            <p><strong>Phone:</strong> 555-234-6789</p>
+                            <p><strong>Region:</strong> Hong Kong</p>
+                            <p><strong>Area:</strong> Central</p>
+                            <p><strong>District:</strong> Chater Road</p>
+                            <p><strong>Card:</strong> **** **** **** 2345</p>
+                            <label for="status-select">Change Status:</label>
+                            <select class="status-select">
+                                <option value="Processing">Processing</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled" selected>Cancelled</option>
+                            </select>
+                            <button class="save-status-btn">Save</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody id="order-list">
+                <tr class="order-row">
+                    <td>12347</td>
+                    <td>2024-10-10</td>
+                    <td>Emily White</td>
+                    <td>$100,000,000</td>
+                    <td class="order-status">Cancelled</td>
+                    <td>
+                        <button class="toggle-details-btn">Details</button>
+                    </td>
+                </tr>
+                <tr class="details-row" style="display: none;">
+                    <td colspan="6">
+                        <div class="details-content">
+                            <h4>Order Details</h4>
+                            <p><strong>Email:</strong> emily.white@example.com</p>
+                            <p><strong>Phone:</strong> 555-234-6789</p>
+                            <p><strong>Region:</strong> Hong Kong</p>
+                            <p><strong>Area:</strong> Central</p>
+                            <p><strong>District:</strong> Chater Road</p>
+                            <p><strong>Card:</strong> **** **** **** 2345</p>
+                            <label for="status-select">Change Status:</label>
+                            <select class="status-select">
+                                <option value="Processing">Processing</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled" selected>Cancelled</option>
+                            </select>
+                            <button class="save-status-btn">Save</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </main>
+</div>
+<div class="message" id="cartMessage"></div>
+    <footer id="contact">
+        <p>Email: cw-cs@vtc.edu.hk</p>
+        <p>Phone: (852) 2595 8333</p>
+    </footer>
+    <script>
+                $("#logout").click(function(event) {
+            event.preventDefault();
+            window.location.href = "../../login/LoginPage.html"; 
+        });
+
+    $('.toggle-details-btn').click(function () {
+        const detailsRow = $(this).closest('tr').next('.details-row');
+        detailsRow.toggle();
+    });
+
+    $('.save-status-btn').click(function () {
+        const newStatus = $(this).siblings('.status-select').val();
+        const orderRow = $(this).closest('tr').prev('.order-row');
+        orderRow.find('.order-status').text(newStatus);
+        $('#cartMessage').text(`Order status updated to: ${newStatus}`).css('background-color', 'green').show();
+                setTimeout(() => {
+                $('#cartMessage').fadeOut(); 
+                }, 1500);
+    });
+    </script>
+</body>
+</html>
